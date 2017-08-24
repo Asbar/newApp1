@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/editList.css" />
+    <link rel="stylesheet" href="./css/listHome.css" />
+    
+    <!--<base href="/" />-->
+</head>
+<body ng-app="enterprise" ng-controller="AppCtrl">
+    <a href="/">Home Page</a>
+    <a href="#!/login">Login</a>
+    <div ng-include src="'partialViews/navMenu.htm'"></div>
+    
+    <ng-view></ng-view>
+    </script>
+    <script src="./lib/angular.js"></script>
+    <script src="./controllers/app.js"></script>
+    <script src="./controllers/editListCtrl.js"></script>
+    <script src="./controllers/loginCtrl.js"></script>
+    <script src="./services/loginService.js"></script>
+    <script src="./lib/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

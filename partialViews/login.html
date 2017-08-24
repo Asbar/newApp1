@@ -1,0 +1,89 @@
+<section id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-wrap">
+                    <h1>Log in with your email account</h1>
+                    <form class="form-group">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="text" name="userName" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" minlength="5" maxlength="30" #myuserName="ngModel"
+                                id="userName" class="form-control" required ng-model="login.userName"
+                                 placeholder="somebody@example.com">
+                            <div ng-if="myuserName.errors && (myuserName.dirty || myuserName.touched)" class="alert alert-danger">
+                                <div ng-hide="!myuserName.errors.required">
+                                    User Name is required
+                                </div>
+                                <div ng-hide="!myuserName.errors.minlength">
+                                    User Name atleast must be 5 characters
+                                </div>
+                                <div ng-hide="!myuserName.errors.pattern">
+                                    Must be a valid email
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="key" class="sr-only">Password</label>
+                            <input type="password" ng-model="login.password" name="key" id="key" minlength="3" maxlength="30" #mypassword="ngModel" 
+                            class="form-control" required  placeholder="Password">
+                            <div ng-if="mypassword.errors && (mypassword.dirty || mypassword.touched)" class="alert alert-danger">
+                                <div ng-hide="!mypassword.errors.required">
+                                    User Name is required
+                                </div>
+                                <div ng-hide="!mypassword.errors.minlength">
+                                    Password must atleast 3 characters
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <div class="character-checkbox" ng-click="checkCredintials()"></div>
+                            <span class="label">Show password </span>
+                        </div>
+                        <input ng-click="loginToSystem(login.userName)" type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
+                    </form>
+                    <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
+                    <hr>
+                </div>
+            </div>
+            <!-- /.col-xs-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+
+<div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">×</span>
+					<span class="sr-only">Close</span>
+				</button>
+                <h4 class="modal-title">Recovery password</h4>
+            </div>
+            <div class="modal-body">
+                <p>Type your email account</p>
+                <input ng-model="output" type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-custom">Recovery</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</footer>
